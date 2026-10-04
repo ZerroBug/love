@@ -37,7 +37,7 @@ function finish(){
   celebration();
   go("final");
 }
-function restart(){revealed=0;location.reload()}
+function restart(){revealed=0;go("welcome");window.scrollTo({top:0,behavior:"smooth"})}
 function toast(msg){
   const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
   clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove("show"),2500);

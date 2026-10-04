@@ -40,3 +40,14 @@ h2 em{font-style:normal;color:var(--rose)}
 .toast{position:fixed;z-index:20;left:50%;bottom:25px;transform:translate(-50%,130px);background:#3d2730;color:white;padding:13px 18px;border-radius:999px;max-width:90%;text-align:center;transition:.35s}.toast.show{transform:translate(-50%,0)}
 .burst{position:fixed;z-index:30;pointer-events:none;animation:burst 2.5s ease forwards}@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(500deg);opacity:0}}
 @media(max-width:520px){.app{width:90%;padding:25px 0}.script{font-size:1.75rem}.intro,.body-copy{font-size:.93rem}.quote-card,.promise-card,.letter,.final-card{padding:23px}.two-buttons .btn,.big-choice .btn{width:100%}.big-choice{display:grid}.yes-choice,.maybe-choice{width:100%}}
+
+.morning-glow{font-size:4.6rem;margin-bottom:8px;filter:drop-shadow(0 8px 18px #e8a52c44);animation:sunrise 2.5s ease-in-out infinite alternate}
+@keyframes sunrise{from{transform:translateY(2px) scale(1)}to{transform:translateY(-4px) scale(1.05)}}
+.morning-card{max-width:570px;margin:25px auto;padding:30px 25px;background:linear-gradient(145deg,#fffdfb,#fff4f7);border:1px solid #fff;box-shadow:0 25px 70px #7f204715;border-radius:28px;line-height:1.8}
+.morning-main{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:700;color:var(--wine);margin-bottom:5px}
+.morning-soft{color:var(--muted);font-size:.96rem}
+.morning-love{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--wine);font-weight:600}
+.morning-line{height:1px;background:var(--line);margin:20px auto;max-width:280px}
+.morning-note{max-width:480px;margin:28px auto;padding:25px;border-radius:24px;background:#fffdfb;border:1px solid #f1dce3;box-shadow:0 18px 45px #7f204711;line-height:1.8;color:var(--muted)}
+.morning-note span{font-size:2.2rem;display:block;margin-bottom:8px}
+.morning-note strong{display:block;margin-top:10px;color:var(--rose);font-family:"Cormorant Garamond",serif;font-size:1.7rem}

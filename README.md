@@ -23,3 +23,6 @@ A romantic, interactive, mobile-friendly single-page website with:
 7. Send Olivia the generated link.
 
 No database or server is needed.
+
+
+The wording is written as a direct conversation from Anane to Olivia, using first-person language throughout.
