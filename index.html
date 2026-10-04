@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8f214f">
+  <title>For Olivia, My Miss Trouble ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sparkles"></div>
+  <div class="petals"></div>
+
+  <main class="app">
+    <section class="screen active" id="welcome">
+      <div class="eyebrow">A LITTLE SOMETHING FROM ANANE</div>
+      <div class="rose">🌹</div>
+      <p class="script">For the girl who stole my attention...</p>
+      <h1>Olivia</h1>
+      <div class="nickname">My Miss Trouble ❤️</div>
+      <p class="intro">I made this little corner of the internet just for you. No pressure. No hurry. Just follow the heart. 💕</p>
+      <button class="btn main-btn" onclick="go('hello')">Open Your Surprise <span>♥</span></button>
+      <p class="hint">P.S. There may be a little trouble inside. 😈</p>
+    </section>
+
+    <section class="screen" id="hello">
+      <div class="mini-heart">♡</div>
+      <p class="script">Hello, beautiful...</p>
+      <h2>So, <em>Miss Trouble</em> finally showed up. 😌</h2>
+      <p class="body-copy">I was wondering how long it would take you to find your way here.</p>
+      <div class="quote-card">
+        <span>“</span>
+        <p>Some people walk into your life quietly...</p>
+        <p class="highlight">and somehow become impossible to ignore.</p>
+        <span class="quote-end">”</span>
+      </div>
+      <p class="body-copy">You somehow managed to do exactly that. ❤️</p>
+      <button class="btn main-btn" onclick="go('trouble')">Okay... Tell Me More →</button>
+    </section>
+
+    <section class="screen" id="trouble">
+      <div class="eyebrow">THE OFFICIAL INVESTIGATION</div>
+      <div class="big-emoji">😈</div>
+      <h2>Why are you called<br><em>Miss Trouble?</em></h2>
+      <p class="body-copy">I have gathered some evidence. Your verdict is required.</p>
+
+      <div class="evidence">
+        <div class="evidence-row"><span>01</span><p>You make me smile when I wasn't planning to.</p></div>
+        <div class="evidence-row"><span>02</span><p>You somehow get away with things because you're cute.</p></div>
+        <div class="evidence-row"><span>03</span><p>You occupy my thoughts more than you probably realize.</p></div>
+      </div>
+
+      <p class="question">Guilty or innocent? 👀</p>
+      <div class="two-buttons">
+        <button class="btn soft-btn" onclick="guilty('guilty')">Guilty 😈</button>
+        <button class="btn soft-btn" onclick="guilty('innocent')">Innocent 😇</button>
+      </div>
+      <p id="guiltyResult" class="result"></p>
+    </section>
+
+    <section class="screen" id="littleThings">
+      <div class="mini-heart">♥</div>
+      <p class="script">It's the little things...</p>
+      <h2>Things I secretly love about you</h2>
+      <div class="reveal-list">
+        <button onclick="reveal(this, 'Your smile ❤️')"><span>01</span><b>Tap to reveal</b></button>
+        <button onclick="reveal(this, 'The way you make ordinary moments feel special ✨')"><span>02</span><b>Tap to reveal</b></button>
+        <button onclick="reveal(this, 'Your beautiful, troublesome personality 😂')"><span>03</span><b>Tap to reveal</b></button>
+        <button onclick="reveal(this, 'Simply... the way you are. ❤️')"><span>04</span><b>Tap to reveal</b></button>
+      </div>
+      <p class="hint">There is no correct order. Just enjoy the little things. 🌷</p>
+      <button class="btn main-btn hidden-btn" id="continueLittle" onclick="go('promise')">There Is More →</button>
+    </section>
+
+    <section class="screen" id="promise">
+      <div class="rose">🌷</div>
+      <p class="script">A small promise from Anane</p>
+      <h2>I don't need perfect.</h2>
+      <div class="promise-card">
+        <p>I don't need every day to be perfect.</p>
+        <p>I don't need us to agree on everything.</p>
+        <p>I don't need you to stop being Miss Trouble. 😂</p>
+        <div class="line"></div>
+        <p class="strong">I just want something real, something sweet, something worth holding onto.</p>
+        <p>And when life gets busy or difficult, I hope we still remember how to find our way back to each other. ❤️</p>
+      </div>
+      <button class="btn main-btn" onclick="go('question')">One Question For You →</button>
+    </section>
+
+    <section class="screen" id="question">
+      <div class="mini-heart">♡</div>
+      <p class="script">No pressure... promise. 😌</p>
+      <h2>Olivia, can I keep<br>making you smile?</h2>
+      <p class="body-copy">Even if it means annoying you sometimes? 😂</p>
+      <div class="big-choice">
+        <button class="btn yes-choice" onclick="yesChoice()">YES, ANANE ❤️</button>
+        <button class="btn maybe-choice" onclick="maybeChoice()">Let me think... 😏</button>
+      </div>
+      <p id="choiceResult" class="result"></p>
+    </section>
+
+    <section class="screen" id="letter">
+      <div class="envelope">💌</div>
+      <p class="script">A letter from me to you</p>
+      <h2>Dear Olivia,</h2>
+      <div class="letter">
+        <p>There are some things that are easier to feel than to explain, and this is one of them.</p>
+        <p>Somewhere between the conversations, the laughter, the teasing and all your little moments of <em>trouble</em>, you became someone very special to me.</p>
+        <p>I love the way you bring a little more colour into ordinary days. I love the smiles, the jokes, the unexpected moments, and even the times when you drive me a little crazy. 😂</p>
+        <p>Most of all, I love that you are <strong>you</strong>.</p>
+        <p>I don't know exactly what every chapter ahead will look like, but I know this: <strong>I'm happy that you're part of my story.</strong></p>
+        <p>So if I tease you, forgive me. If I miss you, don't be surprised. And if I tell you I care about you... believe me. ❤️</p>
+        <p class="signature">With love,<br><strong>Anane</strong> ❤️</p>
+      </div>
+      <button class="btn main-btn" onclick="go('finalQuestion')">There's One Last Thing... →</button>
+    </section>
+
+    <section class="screen" id="finalQuestion">
+      <div class="big-emoji">🥹❤️</div>
+      <p class="script">Okay... last question.</p>
+      <h2>Will you stay a little longer?</h2>
+      <p class="body-copy">Not just on this website. I mean... in my life. ❤️</p>
+      <div class="final-buttons">
+        <button class="btn forever-btn" onclick="finish()">YES ❤️</button>
+        <button class="btn run-btn" id="runBtn" onmouseenter="runAway()" onclick="runAway()">NO 😏</button>
+      </div>
+      <p class="hint">Careful. The NO button is shy. 😂</p>
+    </section>
+
+    <section class="screen" id="final">
+      <div class="celebrate">✨ ❤️ ✨</div>
+      <p class="script">Then it's settled...</p>
+      <h1>You & Me</h1>
+      <div class="forever">and a little bit of trouble. 😈</div>
+      <div class="final-card">
+        <p>Olivia,</p>
+        <p>Thank you for being the beautiful, funny, stubborn, sweet and wonderfully troublesome person that you are.</p>
+        <p class="big-love">You are my favourite kind of trouble. ❤️</p>
+        <p>And no matter how many times you make me say “Olivia! 😂”...</p>
+        <p class="big-love">I'd still choose you.</p>
+        <div class="signature">— Anane 🌹</div>
+      </div>
+      <button class="btn replay-btn" onclick="restart()">Start Again ♡</button>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--wine:#7f2047;--rose:#c9366d;--pink:#ee739d;--cream:#fffaf8;--ink:#3d2730;--muted:#806b73;--line:#edd9df}
+html{scroll-behavior:smooth}
+body{min-height:100vh;color:var(--ink);font-family:"DM Sans",sans-serif;background:radial-gradient(circle at 12% 8%,#ffe1eb 0,transparent 30%),radial-gradient(circle at 88% 88%,#f8dbe5 0,transparent 32%),linear-gradient(135deg,#fffaf8,#fff2f6 50%,#fffaf8);overflow-x:hidden}
+.sparkles,.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.sparkle{position:absolute;color:#e9a0b8;opacity:.55;animation:float 8s linear forwards}
+.petal{position:absolute;top:-40px;font-size:18px;opacity:.4;animation:fall 10s linear forwards}
+@keyframes float{to{transform:translateY(-110vh) rotate(180deg);opacity:0}}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg);opacity:0}}
+.app{position:relative;z-index:2;width:min(700px,92%);min-height:100vh;margin:auto;display:flex;align-items:center;padding:38px 0}
+.screen{display:none;width:100%;text-align:center;animation:enter .7s ease both}.screen.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.68rem;letter-spacing:3px;font-weight:700;color:var(--rose);margin-bottom:24px}
+.rose{font-size:4rem;margin-bottom:8px;filter:drop-shadow(0 8px 15px #c9366d33)}
+.mini-heart{font-size:4rem;color:var(--rose);margin-bottom:8px}
+.script{font-family:"Great Vibes",cursive;font-size:2rem;color:var(--rose);line-height:1.2}
+h1,h2{font-family:"Cormorant Garamond",serif;color:var(--wine);line-height:.98}
+h1{font-size:clamp(4.5rem,17vw,7.5rem);font-weight:600;margin:5px 0}
+h2{font-size:clamp(2.6rem,9vw,4.5rem);font-weight:600;margin:8px 0 20px}
+h2 em{font-style:normal;color:var(--rose)}
+.nickname{font-family:"Cormorant Garamond",serif;font-size:1.65rem;color:var(--wine);letter-spacing:1px}
+.intro,.body-copy{max-width:570px;margin:22px auto;color:var(--muted);line-height:1.8;font-size:1rem}
+.btn{border:0;cursor:pointer;font-family:"DM Sans",sans-serif;font-weight:700;transition:.25s ease}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px #7f204733}
+.main-btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:15px 26px;border-radius:999px;background:linear-gradient(135deg,var(--rose),var(--wine));color:#fff;box-shadow:0 10px 25px #7f20472e}
+.hint{font-size:.78rem;color:#a78a94;margin-top:18px}
+.quote-card,.promise-card,.letter,.final-card{background:#fffdfcdd;border:1px solid #fff;box-shadow:0 25px 70px #7f204715;border-radius:28px}
+.quote-card{position:relative;padding:32px;margin:28px auto;max-width:560px;font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:var(--wine)}
+.quote-card span{font-size:3rem;line-height:0;color:var(--pink)}.quote-card .quote-end{display:block;text-align:right}.highlight{color:var(--rose);font-weight:700}
+.big-emoji{font-size:5rem;margin-bottom:8px}
+.evidence{margin:28px auto;text-align:left;max-width:580px}.evidence-row{display:flex;gap:15px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}.evidence-row span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#fde7ee;color:var(--rose);font-size:.7rem;font-weight:800}.evidence-row p{color:#66505a;line-height:1.5}
+.question{font-weight:700;color:var(--wine);margin:25px 0 12px}.two-buttons,.big-choice,.final-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.soft-btn{padding:13px 24px;border-radius:999px;background:#fff;color:var(--wine);border:1px solid #f0d5df}.result{min-height:28px;margin:18px 0;color:var(--rose);font-weight:700}
+.reveal-list{display:grid;gap:12px;max-width:560px;margin:28px auto;text-align:left}.reveal-list button{border:1px solid #f0dce3;background:#fffafc;border-radius:18px;padding:18px;display:flex;align-items:center;gap:15px;color:var(--wine);cursor:pointer;font:inherit;text-align:left}.reveal-list span{font-size:.7rem;background:#fde7ee;padding:7px 9px;border-radius:50%;font-weight:800;color:var(--rose)}.reveal-list b{font-weight:600}.reveal-list button.revealed{background:#fff0f5;border-color:#f2bdcf}
+.hidden-btn{opacity:0;pointer-events:none;margin-top:20px}.hidden-btn.show{opacity:1;pointer-events:auto}
+.promise-card{padding:30px;text-align:left;line-height:1.9;color:#67515a}.promise-card p+p{margin-top:12px}.promise-card .strong{font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:var(--wine);font-weight:700}.line{height:1px;background:var(--line);margin:22px 0}
+.yes-choice,.forever-btn{padding:16px 27px;border-radius:999px;background:linear-gradient(135deg,#e85888,#9b2756);color:white}.maybe-choice,.run-btn{padding:16px 27px;border-radius:999px;background:#f7edf1;color:var(--wine)}
+.envelope{font-size:4.5rem;margin-bottom:5px}.letter{padding:30px;text-align:left;line-height:1.9;color:#604b55}.letter p+p{margin-top:15px}.letter strong{color:var(--wine)}.signature{text-align:right;margin-top:20px;font-family:"Great Vibes",cursive;font-size:1.8rem;color:var(--rose)}
+.final-buttons{position:relative;min-height:100px;align-items:center}.run-btn{position:relative}
+.celebrate{font-size:2rem;letter-spacing:12px}.forever{font-family:"Great Vibes",cursive;font-size:2.4rem;color:var(--rose);margin:15px 0 25px}.final-card{padding:30px;line-height:1.8;color:#604b55}.big-love{font-family:"Cormorant Garamond",serif;font-size:1.9rem;color:var(--rose);font-weight:700;margin:14px 0}.replay-btn{margin-top:20px;padding:12px 22px;border-radius:999px;background:white;color:var(--wine);border:1px solid #efd8e0}
+.toast{position:fixed;z-index:20;left:50%;bottom:25px;transform:translate(-50%,130px);background:#3d2730;color:white;padding:13px 18px;border-radius:999px;max-width:90%;text-align:center;transition:.35s}.toast.show{transform:translate(-50%,0)}
+.burst{position:fixed;z-index:30;pointer-events:none;animation:burst 2.5s ease forwards}@keyframes burst{to{transform:translate(var(--x),var(--y)) rotate(500deg);opacity:0}}
+@media(max-width:520px){.app{width:90%;padding:25px 0}.script{font-size:1.75rem}.intro,.body-copy{font-size:.93rem}.quote-card,.promise-card,.letter,.final-card{padding:23px}.two-buttons .btn,.big-choice .btn{width:100%}.big-choice{display:grid}.yes-choice,.maybe-choice{width:100%}}
