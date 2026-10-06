@@ -1,185 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#8f214f">
-  <title>For Olivia, My Miss Trouble ❤️</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="sparkles"></div>
-  <div class="petals"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <main class="app">
-    <section class="screen active" id="welcome">
-      <div class="morning-glow">☀️</div>
-      <div class="eyebrow">A MORNING MESSAGE FROM ANANE</div>
-      <p class="script">Good morning, beautiful... ❤️</p>
-      <h1>Olivia</h1>
-      <div class="nickname">My Miss Trouble 🌹</div>
+    <title>I Love Mrs. Trouble ❤️</title>
 
-      <div class="morning-card">
-        <p class="morning-main">Good morning, Olivia. ❤️</p>
-        <p>How was your night?</p>
-        <p class="morning-soft">I hope you slept well, woke up refreshed, and started your day with a smile.</p>
-        <div class="morning-line"></div>
-        <p class="morning-love">I just woke up and somehow, one of the first people on my mind was you. 🥹❤️</p>
-        <p class="morning-soft">So before anything else, I wanted to say good morning to my favourite troublemaker.</p>
-      </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-      <button class="btn main-btn" onclick="go('morningReply')">I'm Awake Now ☀️❤️</button>
-      <p class="hint">And yes... I still have something special for you. 😌</p>
-    </section>
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, #ff7eb3 0%, transparent 35%),
+          radial-gradient(circle at bottom right, #7b2ff7 0%, transparent 40%),
+          linear-gradient(135deg, #16001f, #330033, #14001c);
 
-    <section class="screen" id="morningReply">
-      <div class="morning-glow">🌤️</div>
-      <p class="script">One more thing before we begin...</p>
-      <h2>I hope today is kind to you. ❤️</h2>
-      <p class="body-copy">Whatever today brings, I hope you remember that somewhere out there, Anane is thinking about you and wishing you a beautiful day.</p>
-      <div class="morning-note">
-        <span>☕</span>
-        <p>Take your time this morning.<br>Smile a little.<br>And don't forget...</p>
-        <strong>You are loved. ❤️</strong>
-      </div>
-      <button class="btn main-btn" onclick="go('hello')">Now, Come With Me →</button>
-    </section>
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+      }
 
-    <section class="screen" id="hello">
-      <div class="mini-heart">♡</div>
-      <p class="script">Hello, beautiful...</p>
-      <h2>So, <em>Miss Trouble</em> finally showed up. 😌</h2>
-      <p class="body-copy">I was wondering how long it would take you to find your way here.</p>
-      <div class="quote-card">
-        <span>“</span>
-        <p>Some people walk into your life quietly...</p>
-        <p class="highlight">and somehow become impossible to ignore.</p>
-        <span class="quote-end">”</span>
-      </div>
-      <p class="body-copy">You somehow managed to do exactly that. ❤️</p>
-      <button class="btn main-btn" onclick="go('trouble')">Okay... Tell Me More →</button>
-    </section>
+      /* Background glow */
+      .glow {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: rgba(255, 50, 150, 0.15);
+        filter: blur(80px);
+        animation: glowMove 8s ease-in-out infinite alternate;
+      }
 
-    <section class="screen" id="trouble">
-      <div class="eyebrow">LET ME TELL YOU SOMETHING</div>
-      <div class="big-emoji">😈❤️</div>
-      <p class="script">Do you know why I call you...</p>
-      <h2><em>Miss Trouble?</em></h2>
-      <p class="body-copy">Olivia, I gave you that name myself. 😂 And honestly, I think it suits you perfectly.</p>
+      @keyframes glowMove {
+        from {
+          transform: translate(-150px, -80px);
+        }
 
-      <div class="evidence">
-        <div class="evidence-row"><span>01</span><p>Because you somehow know exactly how to make me smile.</p></div>
-        <div class="evidence-row"><span>02</span><p>Because you can disturb my peace and still make me happy about it. 😂</p></div>
-        <div class="evidence-row"><span>03</span><p>Because somehow, you find your way into my thoughts even when I'm busy.</p></div>
-      </div>
+        to {
+          transform: translate(150px, 100px);
+        }
+      }
 
-      <div class="quote-card">
-        <span>“</span>
-        <p>So yes, Olivia...</p>
-        <p class="highlight">I call you Miss Trouble because you have a special way of causing trouble in my heart. ❤️</p>
-        <span class="quote-end">”</span>
-      </div>
+      /* Main card */
+      .card {
+        position: relative;
+        z-index: 10;
+        width: min(90%, 650px);
+        padding: 55px 30px;
+        text-align: center;
 
-      <p class="question">And honestly... would I change it? 😌</p>
-      <div class="two-buttons">
-        <button class="btn soft-btn" onclick="guilty('guilty')">No, keep calling me that 😈</button>
-        <button class="btn soft-btn" onclick="guilty('innocent')">Maybe... 😂</button>
-      </div>
-      <p id="guiltyResult" class="result"></p>
-    </section>
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 35px;
 
-    <section class="screen" id="littleThings">
-      <div class="mini-heart">♥</div>
-      <p class="script">Let me tell you something else...</p>
-      <h2>Here are some things I love about you ❤️</h2>
-      <p class="body-copy">I'm not sure I've told you all of these, so let me tell you now.</p>
-      <div class="reveal-list">
-        <button onclick="reveal(this, 'Your smile ❤️')"><span>01</span><b>Tap to reveal</b></button>
-        <button onclick="reveal(this, 'The way you make ordinary moments feel special ✨')"><span>02</span><b>Tap to reveal</b></button>
-        <button onclick="reveal(this, 'Your beautiful, troublesome personality 😂')"><span>03</span><b>Tap to reveal</b></button>
-        <button onclick="reveal(this, 'Simply... the way you are. ❤️')"><span>04</span><b>Tap to reveal</b></button>
-      </div>
-      <p class="hint">There is no correct order. Just enjoy the little things. 🌷</p>
-      <button class="btn main-btn hidden-btn" id="continueLittle" onclick="go('promise')">There Is More →</button>
-    </section>
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
 
-    <section class="screen" id="promise">
-      <div class="rose">🌷</div>
-      <p class="script">Let me tell you what I want with you.</p>
-      <h2>I don't need perfect, Olivia.</h2>
-      <div class="promise-card">
-        <p>I don't need every day to be perfect.</p>
-        <p>I don't need us to agree on everything.</p>
-        <p>I don't need you to stop being Miss Trouble. 😂</p>
-        <div class="line"></div>
-        <p class="strong">I just want something real, something sweet, something worth holding onto.</p>
-        <p>And when life gets busy or difficult, I hope we still remember how to find our way back to each other. ❤️</p>
-      </div>
-      <button class="btn main-btn" onclick="go('question')">One Question For You →</button>
-    </section>
+        box-shadow:
+          0 25px 70px rgba(0, 0, 0, 0.45),
+          inset 0 0 30px rgba(255, 255, 255, 0.04);
 
-    <section class="screen" id="question">
-      <div class="mini-heart">♡</div>
-      <p class="script">Can I ask you something, Olivia?</p>
-      <h2>Can I keep<br>making you smile?</h2>
-      <p class="body-copy">Even if it means teasing you, annoying you sometimes, and reminding you that you're my Miss Trouble? 😂❤️</p>
-      <div class="big-choice">
-        <button class="btn yes-choice" onclick="yesChoice()">YES, ANANE ❤️</button>
-        <button class="btn maybe-choice" onclick="maybeChoice()">Let me think... 😏</button>
-      </div>
-      <p id="choiceResult" class="result"></p>
-    </section>
+        animation: cardFloat 4s ease-in-out infinite;
+      }
 
-    <section class="screen" id="letter">
-      <div class="envelope">💌</div>
-      <p class="script">Let me say this properly...</p>
-      <h2>Olivia, this is from my heart.</h2>
-      <div class="letter">
-        <p>Olivia, there are some things that are easier for me to feel than to explain, but I want to try.</p>
-        <p>Somewhere between our conversations, our laughter, the teasing and all the little moments you've given me, you became someone very special to me.</p>
-        <p>I love the way you bring more colour into my ordinary days. I love the smiles, the jokes, the unexpected moments, and yes... even the moments when you drive me a little crazy. 😂</p>
-        <p>And that is exactly why I call you <strong>Miss Trouble</strong>. You have this beautiful way of disturbing my peace while somehow making my heart happier. ❤️</p>
-        <p>Most of all, Olivia, I love that you are <strong>you</strong>. I don't want a perfect version of you. I want the real you.</p>
-        <p>I don't know exactly what every chapter ahead will look like, but I know this: <strong>I'm happy you're part of my story.</strong></p>
-        <p>So when I tease you, smile. When I say I miss you, believe me. And when I tell you I care about you... please know that I mean it. ❤️</p>
-        <p class="signature">With love,<br><strong>Anane</strong> ❤️</p>
-      </div>
-      <button class="btn main-btn" onclick="go('finalQuestion')">There's One Last Thing... →</button>
-    </section>
+      @keyframes cardFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
 
-    <section class="screen" id="finalQuestion">
-      <div class="big-emoji">🥹❤️</div>
-      <p class="script">Olivia... one last thing I want to ask you.</p>
-      <h2>Will you stay a little longer?</h2>
-      <p class="body-copy">I'm not talking about this website anymore. I'm asking if you'll keep being part of my life. ❤️</p>
-      <div class="final-buttons">
-        <button class="btn forever-btn" onclick="finish()">YES ❤️</button>
-        <button class="btn run-btn" id="runBtn" onmouseenter="runAway()" onclick="runAway()">NO 😏</button>
-      </div>
-      <p class="hint">Careful. The NO button is shy. 😂</p>
-    </section>
+        50% {
+          transform: translateY(-10px);
+        }
+      }
 
-    <section class="screen" id="final">
-      <div class="celebrate">✨ ❤️ ✨</div>
-      <p class="script">Then let me say this...</p>
-      <h1>Olivia & Anane</h1>
-      <div class="forever">with a little bit of trouble. 😈❤️</div>
-      <div class="final-card">
-        <p>Olivia,</p>
-        <p>Olivia, thank you for being the beautiful, funny, stubborn, sweet and wonderfully troublesome woman that you are.</p>
-        <p class="big-love">You are my favourite kind of trouble. ❤️</p>
-        <p>And no matter how many times I have to say, “Olivia! What are you doing? 😂”...</p>
-        <p class="big-love">I'd still choose you.</p>
-        <div class="signature">— Anane 🌹</div>
-      </div>
-      <button class="btn replay-btn" onclick="restart()">Start Again ♡</button>
-    </section>
-  </main>
+      .small-heart {
+        font-size: 55px;
+        animation: heartbeat 1.3s infinite;
+        display: inline-block;
+      }
 
-  <div class="toast" id="toast"></div>
-  <script src="script.js"></script>
-</body>
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        15% {
+          transform: scale(1.25);
+        }
+
+        30% {
+          transform: scale(1);
+        }
+
+        45% {
+          transform: scale(1.2);
+        }
+      }
+
+      h1 {
+        margin-top: 15px;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        font-weight: 800;
+        line-height: 1.05;
+
+        background: linear-gradient(90deg, #fff, #ff8acb, #ff3d81, #fff);
+
+        background-size: 300%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+        animation: textGlow 5s linear infinite;
+      }
+
+      @keyframes textGlow {
+        0% {
+          background-position: 0%;
+        }
+
+        100% {
+          background-position: 300%;
+        }
+      }
+
+      .trouble {
+        display: block;
+        font-size: 0.7em;
+        color: #ff73b9;
+        text-shadow: 0 0 25px rgba(255, 60, 150, 0.7);
+      }
+
+      .message {
+        margin: 25px auto;
+        max-width: 500px;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .message span {
+        color: #ff8bc7;
+        font-weight: 700;
+      }
+
+      /* Button */
+      button {
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        padding: 15px 32px;
+        border-radius: 50px;
+
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+
+        background: linear-gradient(135deg, #ff3d81, #b62cff);
+
+        box-shadow: 0 10px 30px rgba(255, 45, 130, 0.35);
+
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-4px) scale(1.04);
+
+        box-shadow: 0 15px 40px rgba(255, 45, 130, 0.55);
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+
+      /* Floating bubbles */
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle at 30% 25%,
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 130, 200, 0.25) 30%,
+          rgba(255, 255, 255, 0.04) 70%
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+
+        box-shadow:
+          inset 0 0 15px rgba(255, 255, 255, 0.15),
+          0 0 20px rgba(255, 100, 190, 0.1);
+
+        animation: bubbleUp linear infinite;
+      }
+
+      @keyframes bubbleUp {
+        0% {
+          transform: translateY(0) translateX(0) scale(0.7);
+
+          opacity: 0;
+        }
+
+        10% {
+          opacity: 0.7;
+        }
+
+        50% {
+          transform: translateY(-50vh) translateX(40px) scale(1);
+        }
+
+        100% {
+          transform: translateY(-115vh) translateX(-60px) scale(1.2);
+
+          opacity: 0;
+        }
+      }
+
+      /* Floating hearts */
+      .heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 25px;
+        pointer-events: none;
+        animation: heartFloat 5s linear forwards;
+        z-index: 5;
+      }
+
+      @keyframes heartFloat {
+        0% {
+          opacity: 0;
+          transform: translateY(0) scale(0.5) rotate(0deg);
+        }
+
+        15% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(-100vh) translateX(var(--move)) scale(1.5)
+            rotate(25deg);
+        }
+      }
+
+      /* Sparkles */
+      .sparkle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 15px white;
+        animation: sparkle 2s infinite ease-in-out;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0.1;
+          transform: scale(0.5);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1.5);
+        }
+      }
+
+      .signature {
+        margin-top: 25px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .card {
+          padding: 45px 20px;
+          border-radius: 25px;
+        }
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .message {
+          font-size: 0.95rem;
+        }
+
+        .small-heart {
+          font-size: 45px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="glow"></div>
+
+    <!-- Sparkles -->
+    <div class="sparkle" style="top: 15%; left: 12%"></div>
+    <div
+      class="sparkle"
+      style="top: 25%; left: 85%; animation-delay: 0.7s"
+    ></div>
+    <div
+      class="sparkle"
+      style="top: 70%; left: 8%; animation-delay: 1.2s"
+    ></div>
+    <div
+      class="sparkle"
+      style="top: 80%; left: 90%; animation-delay: 0.4s"
+    ></div>
+    <div
+      class="sparkle"
+      style="top: 10%; left: 50%; animation-delay: 1.5s"
+    ></div>
+
+    <!-- Main content -->
+    <div class="card">
+      <div class="small-heart">❤️</div>
+
+      <h1>
+        I Love
+        <span class="trouble">Mrs. Trouble</span>
+      </h1>
+
+      <p class="message">
+        You may be <span>Mrs. Trouble</span>... but somehow, you're also my
+        favorite kind of trouble. 😍 <br /><br />
+        Life is more beautiful, more exciting, and definitely more interesting
+        with you. ❤️
+      </p>
+
+      <button onclick="sendLove()">💕 Send More Love</button>
+
+      <div class="signature">Made with ❤️ just for Mrs. Trouble</div>
+    </div>
+
+    <script>
+      /* --------------------------------
+           CREATE BACKGROUND BUBBLES
+        -------------------------------- */
+
+      function createBubble() {
+        const bubble = document.createElement("div");
+
+        bubble.classList.add("bubble");
+
+        const size = Math.random() * 70 + 20;
+
+        bubble.style.width = size + "px";
+        bubble.style.height = size + "px";
+
+        bubble.style.left = Math.random() * 100 + "%";
+
+        bubble.style.animationDuration = Math.random() * 8 + 7 + "s";
+
+        bubble.style.animationDelay = Math.random() * 5 + "s";
+
+        document.body.appendChild(bubble);
+
+        setTimeout(() => {
+          bubble.remove();
+        }, 16000);
+      }
+
+      setInterval(createBubble, 500);
+
+      /* --------------------------------
+           CREATE FLOATING HEARTS
+        -------------------------------- */
+
+      function createHeart() {
+        const heart = document.createElement("div");
+
+        heart.classList.add("heart");
+
+        const hearts = ["❤️", "💕", "💖", "💗", "💓", "💘", "💞"];
+
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = Math.random() * 100 + "%";
+
+        heart.style.fontSize = Math.random() * 25 + 18 + "px";
+
+        heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+
+        heart.style.setProperty("--move", Math.random() * 200 - 100 + "px");
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 7000);
+      }
+
+      /* --------------------------------
+           BUTTON LOVE EXPLOSION
+        -------------------------------- */
+
+      function sendLove() {
+        for (let i = 0; i < 30; i++) {
+          setTimeout(() => {
+            createHeart();
+          }, i * 80);
+        }
+
+        const button = document.querySelector("button");
+
+        button.innerHTML = "💖 Love Sent! 💖";
+
+        setTimeout(() => {
+          button.innerHTML = "💕 Send More Love";
+        }, 2000);
+      }
+
+      /* Initial hearts */
+
+      setInterval(createHeart, 900);
+    </script>
+  </body>
 </html>
